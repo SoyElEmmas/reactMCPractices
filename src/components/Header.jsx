@@ -1,20 +1,11 @@
 import Button from "./Button"
 // const Header = (props) => { antes de des-estructurar
-const Header = ({ titulo }) => {
-
-    const saludo = () => {
-        console.log('hola');
-    }
-
-    const despedida = () =>{
-        console.log('adios')
-    }
+const Header = ({ titulo, mostrarForm, onAdd }) => {
 
     return (
         <header className="header">
             <h1>{titulo}</h1>
-            <Button texto='Agregar' color='green' param={saludo} />
-            <Button texto='Borrar' color='red' param={despedida}/>
+            <Button texto={mostrarForm ? 'Ocultar': 'Mostrar'} color={mostrarForm ? 'red':'green'} onClick={onAdd}  />
         </header>
     )
 }
